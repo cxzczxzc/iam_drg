@@ -22,9 +22,6 @@ The solution was tested in an environment configured with the following precondi
 * The viewer group gets read-only roles assigned to it. This would enable users to view services through the console but restrict the ability to perform any CRUD operations. There are exceptions to this, such as BigQuery. For BigQuery additional roles might need to be provisioned in order to ensure operability through the console. 
 * Users use the Terraform Cloud Workspace, which is authenticated and authorized to create resources in the GCP Project by the `Terraform Cloud Service Account`.
 
-
-**Note**: Some GCP services don't support IAM conditions for delegated role grants. For full list of supported services, see [here](https://cloud.google.com/iam/docs/conditions-attribute-reference#api-attributes-iam)
-
 ## Technical Details about the DRG IAM condition
 
 IAM conditions use a CEL (Common Expression Language) expression syntax to build IAM conditions. 
@@ -68,6 +65,8 @@ locals {
 4. Collect up to 13 condition strings per binding -> i.e. effective limit of 130 roles per IAM binding
 5. Create IAM binding for each set of 130 roles
 
+##### Note 
+Some GCP services don't support IAM conditions for delegated role grants. For full list of supported services, see [here](https://cloud.google.com/iam/docs/conditions-attribute-reference#api-attributes-iam)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
