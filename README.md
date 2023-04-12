@@ -23,6 +23,8 @@ The solution was tested in an environment configured with the following precondi
 * Users use the Terraform Cloud Workspace, which is authenticated and authorized to create resources in the GCP Project by the `Terraform Cloud Service Account`.
 
 
+**Note**: Some GCP services don't support IAM conditions for delegated role grants. For full list of supported services, see [here](https://cloud.google.com/iam/docs/conditions-attribute-reference#api-attributes-iam)
+
 ## Technical Details about the DRG IAM condition
 
 IAM conditions use a CEL (Common Expression Language) expression syntax to build IAM conditions. 
