@@ -24,7 +24,7 @@ IAM conditions use a CEL (Common Expression Language) expression syntax to build
 ```
 api.getAttribute('iam.googleapis.com/modifiedGrantsByRole', []).hasOnly([%s])
 ```
-The `%s` is replaced by a list of roles (roles that can be granted to other principals, i.e. allow-listed roles). There is a limit of 10 roles allowed per `.hasOnly()` call. Additionally, 13 calls to the above expression can be made and concatenated with `||` in a single IAM condition. So effectively, the limit is 130 roles per IAM resource binding. 
+The `%s` is replaced by a list of roles (roles that can be granted to other principals, i.e. allow-listed roles). There is a limit of 10 roles allowed per `.hasOnly()` call. Additionally, at most 13 calls to the above expression can be made and concatenated with `||` in a single IAM condition. So effectively, the limit is 130 roles per IAM resource binding. 
 
 This module works around that by applying the IAM admin binding in multiple bindings of 130 roles. 
 
