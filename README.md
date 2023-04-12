@@ -2,7 +2,6 @@
 
 This solution is designed to achieve the goal of implementing principle of least privilege in an organization. 
 
-This module also takes into account preventing users accessing their projects through the console to perform work. Thus, the viewer group for the project gets assigned a set of roles that ensure that console access is read-only. 
 
 # How it works
 This solution uses IAM conditions to restrict users to grant themselves excessive permissions.
