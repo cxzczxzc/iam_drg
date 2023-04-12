@@ -13,9 +13,8 @@ The solution was tested in an environment configured with the following precondi
  - Terraform Cloud Service Account
  - VPC Network with at least 1 subnet
  - APIs enabled based on service selection
-* There is a `Terraform Cloud Service Account` which is essentially the project level service account. This account is used for granting roles to project level identities, so that they can access their required resources. 
-* The list of roles that can be granted, however, is restriced. This restriction is enforced in code, by an IAM condition. This service account itself has `roles/resourcemanager.projectIamAdmin` as well as other admin roles for approved services, which can be found in `variables.tf` file.
-* The viewer group gets read-only roles assigned to it. This would enable users to view services through the console but restrict the ability to perform any CRUD operations. There are exceptions to this, such as BigQuery. For BigQuery additional roles might need to be provisioned in order to ensure operability through the console. 
+* There is a `Terraform Cloud Service Account` which is essentially the project level service account. This account is used for IaC, as well as for granting roles to project level identities, so that they can access their required resources. 
+* The list of roles that can be granted, however, is restriced. This restriction is enforced in code using IAM conditions. This service account itself has `roles/resourcemanager.projectIamAdmin` as well as other admin roles for approved services, which can be found in `variables.tf` file.
 * Users use the Terraform Cloud Workspace, which is authenticated and authorized to create resources in the GCP Project by the `Terraform Cloud Service Account`.
 
 ## Technical Details about the DRG IAM condition
