@@ -1,7 +1,3 @@
-# Summary
-This module solves the problem of having an over provisioned project level Terrform Service Account. It is the implementation of the design for incorporating principle of least privilege in an organization. 
-
-
 # Description 
 
 This solution is designed to achieve the goal of implementing principle of least privilege in an organization. 
