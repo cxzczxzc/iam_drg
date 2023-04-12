@@ -60,7 +60,7 @@ locals {
 4. Collect up to 13 condition strings per binding -> i.e. effective limit of 130 roles per IAM binding
 5. Create IAM binding for each set of 130 roles
 
-##### Note 
+#### Note 
 Some GCP services don't support IAM conditions for delegated role grants. For full list of supported services, see [here](https://cloud.google.com/iam/docs/conditions-attribute-reference#api-attributes-iam)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
